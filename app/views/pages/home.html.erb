@@ -7,16 +7,15 @@
 <% else %>
 
   <p>Olá, <%= current_user.email %></p>
-  <%= link_to 'Sair', destroy_user_session_path, method: :delete %> <br/>
 
   <%= form_for(@tweet) do |f| %>
     <%= f.text_field :content %>
     <%= f.submit %>
   <% end %>
   
-  <h1>Tweets</h1>
+  <h1>Feed</h1>
   <ul>
-    <% current_user.tweets.each do |tweet| %>
+    <% current_user.feed.each do |tweet| %>
       <li> <%= tweet.content %> </li>
     <% end %>
   </ul>

@@ -11,3 +11,9 @@ User.create(email: "alineofreitas@outlook.com", password: '123456')
 20.times do |n|
     User.create(email: "user-numero#{n}@email.com", password: '123456')
 end
+
+User.all.each do |user|
+  20.times do |n|
+    user.tweets.create(content: "Hello my ##{n}, this is #{user.email}")
+  end
+end

@@ -1,0 +1,23 @@
+<h1>Home</h1>
+
+<% unless user_signed_in? %>
+
+  <%= link_to 'Sign In here', new_user_session_path %> | <%= link_to 'Sign up here', '#' %>
+
+<% else %>
+
+  <p>Olá, <%= current_user.email %></p>
+  <%= link_to 'Sair', destroy_user_session_path, method: :delete %> <br/>
+
+  <%= form_for(@tweet) do |f| %>
+    <%= f.text_field :content %>
+    <%= f.submit %>
+  <% end %>
+  
+  <h1>Tweets</h1>
+  <ul>
+    <% current_user.tweets.each do |tweet| %>
+      <li> <%= tweet.content %> </li>
+    <% end %>
+  </ul>
+<% end %>

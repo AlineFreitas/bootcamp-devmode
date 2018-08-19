@@ -21,8 +21,14 @@ class User < ApplicationRecord
 
 
   def follow(followed_user)
-    unless followed_user.followers.include?(self)
-      followed_user.following(current_user)
-    end
+    #
+  end
+
+  def unfollow(followed_user)
+    #
+  end
+
+  def method_name
+    
   end
 end

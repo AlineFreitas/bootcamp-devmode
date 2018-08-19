@@ -7,7 +7,6 @@
 <% else %>
 
   <p>Olá, <%= current_user.email %></p>
-  <%= link_to 'Sair', destroy_user_session_path, method: :delete %> <br/>
 
   <%= form_for(@tweet) do |f| %>
     <%= f.text_field :content %>

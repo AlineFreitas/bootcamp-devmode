@@ -4,4 +4,8 @@ class PagesController < ApplicationController
         @tweet = current_user.tweets.build
       end
 	end
+
+  def about
+    
+  end
 end

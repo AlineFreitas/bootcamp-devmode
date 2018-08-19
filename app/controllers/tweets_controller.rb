@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
         @tweet = current_user.tweets.new(tweet_params)
         
         if @tweet.save
-          redirect_to root_path, notice: 'Tweet criado!'
+          redirect_to :root, notice: 'Tweet criado!'
         else
           redirect_to :root, notice: 'Tweet não criado!'
         end
